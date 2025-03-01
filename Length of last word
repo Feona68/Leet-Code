@@ -1,0 +1,15 @@
+Q)Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+A word is a maximal substring consisting of non-space characters only.
+
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        
+        List=list(s.split(" "))
+        lword=""
+        l=len(List) 
+        for i in range(l-1,-1,-1):
+            word=List[i]
+            if len(word)!=0:
+                return len(word)
+        
