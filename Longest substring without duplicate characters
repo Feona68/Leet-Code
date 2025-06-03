@@ -1,0 +1,23 @@
+Q)Given a string s, find the length of the longest substring without duplicate characters.
+Example 1:
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+soln)
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        seen=set()
+        left=0
+        maxlen=0
+
+        for right in range(len(s)):
+            while s[right] in seen:
+                seen.remove(s[left])
+                left=left+1
+            seen.add(s[right])
+
+            maxlen=max(maxlen,right-left+1)
+
+        return maxlen
