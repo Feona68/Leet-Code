@@ -1,0 +1,22 @@
+Q)Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+The overall run time complexity should be O(log (m+n)).
+
+soln)
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        for i in nums2:
+            nums1.append(i)
+        nums1.sort()
+        l=len(nums1)
+        
+        if l==1:
+            median=nums1[0]
+        elif l%2==1:
+            median=nums1[(l//2)]
+
+        else:
+            median=(nums1[l//2]+nums1[(l//2)-1])/2
+
+        return median
+
