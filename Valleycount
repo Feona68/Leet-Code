@@ -1,0 +1,37 @@
+Q)
+You are given a string that represent steps in combination of U and D characters.
+U represents to take a step up in level. 
+D represents to take a step down in level.
+
+You always start at sea level.
+A valley is a dip from sea level and back to sea level.
+Example:
+Input: UUDDDDUDUU
+Output = 1
+
+Explanation:
+                       *
+                      * *
+Sea level __ *   *        __ sea level
+                           * * *
+                            * * --> this is a valley, when reached back to sea level
+soln)
+s=input()
+count=0
+level=0
+for i in s:
+    
+    if level<0:
+            if i=='U':
+                level+=1
+            else:
+                level-=1
+            if level==0:
+                count+=1
+    else:
+        if i=='U':
+            level+=1
+        elif i=='D':
+            level-=1
+            
+print(count)
