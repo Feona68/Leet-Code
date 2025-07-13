@@ -1,0 +1,12 @@
+steps=input()
+level=0
+countvalley=0
+for step in steps:
+if step=='U':
+  level+=1
+elif step=='D':
+  level-=1
+
+if level==0 and step=='U':
+  countvalley+=1
+print(countvalley)
