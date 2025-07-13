@@ -1,0 +1,19 @@
+Check if two strings are anagrams of each other.
+
+
+Example:
+Input:
+
+str1 = abcd
+str2 = badc
+
+Output: Anagram
+
+from collections import Counter
+str1=input()
+str2=input()
+
+if Counter(str1)==Counter(str2):
+    print("Anagrams")
+else:
+    print("Not anagrams")
