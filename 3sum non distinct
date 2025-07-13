@@ -1,0 +1,25 @@
+Design an algorithm that takes as input an array A[] and 
+a number k, and determine if there are three entries 
+in the array (Not necessarily distinct) which add up to 
+the specified number k.
+
+def numsum(arr,K):
+    arr.sort()
+    
+    for i in range(0,len(arr)):
+        k=i
+        j=len(arr)-1
+        while k<=j:
+            sum=arr[i]+arr[k]+arr[j]
+            if sum<K:
+                k+=1
+            elif sum>K:
+                j-=1
+            elif sum==K:
+                return True
+    return False
+            
+
+arr=list(map(int,input().split(',')))
+K=int(input())
+print(numsum(arr,K))
